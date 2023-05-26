@@ -57,34 +57,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun numberGenerator(text: String, txtResult: TextView){
-        if (text.isNotEmpty()){
+    private fun numberGenerator(text: String, txtResult: TextView) {
+        if (text.isEmpty()) {
+            Toast.makeText(this, "Number must be between 6 and 15.", Toast.LENGTH_LONG).show()
+            return
+        }
 
-            val quantity = text.toInt()
+        val quantity = text.toInt()
 
-            if (quantity in 6..15){
+        if (quantity < 6 || quantity > 15) {
+            Toast.makeText(this, "Number must be between 6 and 15 .", Toast.LENGTH_LONG).show()
+            return
+        }
 
-                val numbers = mutableSetOf<Int>()
-                val rand = Random()
+        val numbers = mutableSetOf<Int>()
+        val rand = Random()
 
-                while (true){
-                    val number = rand.nextInt(60)
-                    numbers.add(number + 1)
+        while (true) {
+            val number = rand.nextInt(60)
+            numbers.add(number + 1)
 
-                    if(numbers.size == quantity){
-                        break
-                    }
-                }
-
-               txtResult.text = numbers.joinToString(" - ")
-
-            } else {
-                Toast.makeText(this, "Number must be between 6 and 15 !", Toast.LENGTH_LONG).show()
+            if (numbers.size == quantity) {
+                break
             }
         }
-        else {
-            Toast.makeText(this, "Number must be between 6 and 15 !", Toast.LENGTH_LONG).show()
-        }
+
+        txtResult.text = numbers.joinToString(" - ")
+
     }
 
 
