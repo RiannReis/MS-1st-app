@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">GanheiNaMega</string>
-    <string name="title">Boa Sorte!!!</string>
-    <string name="hint_msg">Insira seus números aqui:</string>
-    <string name="btngen_numbers">GERAR NÚMEROS</string>
+    <string name="app_name">MS 1st app</string>
+    <string name="title">GOOD LUCK!!!</string>
+    <string name="hint_msg">Type the number...</string>
+    <string name="btngen_numbers">GENERATE NUMBERS</string>
 </resources>
