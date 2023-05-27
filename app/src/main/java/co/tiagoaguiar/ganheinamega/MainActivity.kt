@@ -1,16 +1,19 @@
 package co.tiagoaguiar.ganheinamega
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var prefs: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,6 +24,18 @@ class MainActivity : AppCompatActivity() {
         val editText: EditText = findViewById(R.id.edit_number)
         val txtResult: TextView = findViewById(R.id.txt_result)
         val btnGenerate: Button = findViewById(R.id.btn_click)
+
+        //preferences database
+        prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
+        val result = prefs.getString("result", null)
+
+        /*if(result != null){
+            txtResult.text = "Last numbers: $result"
+        }*/
+
+        result?.let {
+            txtResult.text = "Previous numbers:\n $it"
+        }
 
         /*EVENTOS DE TOUCH
 
@@ -83,6 +98,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         txtResult.text = numbers.joinToString(" - ")
+
+        val editor = prefs.edit()
+        editor.putString("result", txtResult.text.toString())
+        editor.apply()
+
+        /*prefs.edit().apply {
+            putString("result", txtResult.text.toString())
+            apply()
+        }*/
 
     }
 
