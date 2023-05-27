@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         // aqui decide o que o app vai fazer
         setContentView(R.layout.activity_main)
 
@@ -33,8 +34,9 @@ class MainActivity : AppCompatActivity() {
             txtResult.text = "Last numbers: $result"
         }*/
 
+
         result?.let {
-            txtResult.text = "Previous numbers:\n $it"
+            txtResult.text = getString(R.string.spdata, it)
         }
 
         /*EVENTOS DE TOUCH

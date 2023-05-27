@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">MS 1st app</string>
+    <string name="app_name">generator raffle numbers</string>
     <string name="title">GOOD LUCK!!!</string>
     <string name="hint_msg">Type the number…</string>
     <string name="btngen_numbers">GENERATE NUMBERS</string>
+    <string name="spdata">Previous numbers:\n %s</string>
+    <string name="todo">TODO</string>
+    <string name="test1">TODO</string>
+    <string name="test2">TODO</string>
 </resources>
