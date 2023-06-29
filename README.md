@@ -12,6 +12,9 @@
 ## Description:
 A simple app that generates 6 to 15 random non-repeating numbers between 1 to 60.
 
+### App icon credits:
+<a href="https://www.flaticon.com/br/icones-gratis/trevo" title="trevo ícones">Trevo ícones criados por Freepik - Flaticon</a>
+
 ### Demo:
 
 https://github.com/RiannReis/MS-1st-app/assets/106779395/6937205a-890f-4275-9197-1c0c92aba85f
